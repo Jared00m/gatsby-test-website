@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-} from './layout.module.css';
+
+import * as styles from './layout.module.css';
 
 interface LayoutProps {
   pageTitle: string;
@@ -15,11 +10,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
   return (
-    <div className={container}>
+    <div className={styles.container}>
       <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to='/' className={navLinkText}>
+        <ul className={styles.navLinks}>
+          <li className={styles.navLinkItem}>
+            <Link to='/' className={styles.navLinkText}>
               Home
             </Link>
           </li>
@@ -29,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main>
-        <h1 className={heading}>{pageTitle}</h1>
+        <h1 className={styles.heading}>{pageTitle}</h1>
         {children}
       </main>
     </div>
